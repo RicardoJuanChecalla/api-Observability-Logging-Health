@@ -1,0 +1,1 @@
+D:\SamplesAPI\aspnet-microservices\obj\Debug\docker-compose.dcproj.CoreCompileInputs.cache
