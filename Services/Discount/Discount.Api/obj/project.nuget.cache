@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "uSpM0HHR9ek50KHbq4wDDGSXx7YihObfQ1ecBD4yXcx8tOblopRE7ElFZN87VBlvvNqxHMIk8t5Zt5EsOihojg==",
+  "dgSpecHash": "yf70Rk/Dwfso4pF2MKmJHVMLgUDgngs+RcDFhEBz0nU38HIZ+80zoyGK0IMglhYjqZyzp8nPYgkWjwprdMHo/w==",
   "success": true,
-  "projectFilePath": "D:\\SamplesAPI\\aspnet-microservices\\services\\Discount\\Discount.api\\Discount.api.csproj",
+  "projectFilePath": "D:\\SamplesAPI\\aspnet-microservices\\Services\\Discount\\Discount.Api\\Discount.Api.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\RICARDO\\.nuget\\packages\\dapper\\2.0.123\\dapper.2.0.123.nupkg.sha512",
     "C:\\Users\\RICARDO\\.nuget\\packages\\microsoft.extensions.apidescription.server\\3.0.0\\microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512",

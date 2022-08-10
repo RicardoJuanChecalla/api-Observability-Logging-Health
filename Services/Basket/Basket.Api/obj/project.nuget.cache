@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "oRK/h97G54U9soJ0Qo1T+1RuB09rKq9z5mEJrGL3tS9KvcuGUucF649MMuQ8MDU14QeJpvSubrI44mPxWixphw==",
+  "dgSpecHash": "1DT79A0IcnwzBFfB3HV/brPYXpMLyQ9DaOdc9C9A8LQo5P5vb23/EqKZEsLw1n8y8J3Uprb2AtolbDJlcQDXUw==",
   "success": true,
   "projectFilePath": "D:\\SamplesAPI\\aspnet-microservices\\Services\\Basket\\Basket.Api\\Basket.Api.csproj",
   "expectedPackageFiles": [
