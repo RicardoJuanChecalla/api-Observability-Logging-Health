@@ -42,3 +42,10 @@ D:\SamplesAPI\aspnet-microservices\services\Basket\Basket.api\bin\Debug\net6.0\r
 D:\SamplesAPI\aspnet-microservices\services\Basket\Basket.api\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.0\System.Drawing.Common.dll
 D:\SamplesAPI\aspnet-microservices\services\Basket\Basket.api\bin\Debug\net6.0\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
 D:\SamplesAPI\aspnet-microservices\services\Basket\Basket.api\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.0\System.Windows.Extensions.dll
+D:\SamplesAPI\aspnet-microservices\services\Basket\Basket.api\bin\Debug\net6.0\Google.Protobuf.dll
+D:\SamplesAPI\aspnet-microservices\services\Basket\Basket.api\bin\Debug\net6.0\Grpc.AspNetCore.Server.dll
+D:\SamplesAPI\aspnet-microservices\services\Basket\Basket.api\bin\Debug\net6.0\Grpc.AspNetCore.Server.ClientFactory.dll
+D:\SamplesAPI\aspnet-microservices\services\Basket\Basket.api\bin\Debug\net6.0\Grpc.Core.Api.dll
+D:\SamplesAPI\aspnet-microservices\services\Basket\Basket.api\bin\Debug\net6.0\Grpc.Net.Client.dll
+D:\SamplesAPI\aspnet-microservices\services\Basket\Basket.api\bin\Debug\net6.0\Grpc.Net.ClientFactory.dll
+D:\SamplesAPI\aspnet-microservices\services\Basket\Basket.api\bin\Debug\net6.0\Grpc.Net.Common.dll

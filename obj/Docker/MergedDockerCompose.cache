@@ -10,21 +10,17 @@ services:
     environment:
       ASPNETCORE_ENVIRONMENT: Development
       ASPNETCORE_HTTPS_PORT: '8004'
-      ASPNETCORE_HTTP_PORT: '8003'
       ASPNETCORE_Kestrel__Certificates__Default__Password: 123456-a
       ASPNETCORE_Kestrel__Certificates__Default__Path: /https/aspnetapp.pfx
-      ASPNETCORE_URLS: https://+;http://+
+      ASPNETCORE_URLS: https://+:443
       CacheSettings:ConnectionString: basketdb:6379
+      GrpcSettings:DiscountUrl: http://discount.grpc
     image: basketapi
     ports:
-    - published: 8003
-      target: 80
     - published: 8004
       target: 443
     volumes:
     - C:\Users\RICARDO\.aspnet\https:/https:ro
-    - C:\Users\RICARDO\AppData\Roaming\ASP.NET\Https:/root/.aspnet/https:ro
-    - C:\Users\RICARDO\AppData\Roaming\Microsoft\UserSecrets:/root/.microsoft/usersecrets:ro
   basketdb:
     container_name: basketdb
     image: redis:alpine
@@ -43,21 +39,16 @@ services:
     environment:
       ASPNETCORE_ENVIRONMENT: Development
       ASPNETCORE_HTTPS_PORT: '8002'
-      ASPNETCORE_HTTP_PORT: '8001'
       ASPNETCORE_Kestrel__Certificates__Default__Password: 123456-a
       ASPNETCORE_Kestrel__Certificates__Default__Path: /https/aspnetapp.pfx
-      ASPNETCORE_URLS: https://+;http://+
+      ASPNETCORE_URLS: https://+:443
       DatabaseSettings:ConnectionString: mongodb://catalogdb:27017
     image: catalogapi
     ports:
-    - published: 8001
-      target: 80
     - published: 8002
       target: 443
     volumes:
     - C:\Users\RICARDO\.aspnet\https:/https:ro
-    - C:\Users\RICARDO\AppData\Roaming\ASP.NET\Https:/root/.aspnet/https:ro
-    - C:\Users\RICARDO\AppData\Roaming\Microsoft\UserSecrets:/root/.microsoft/usersecrets:ro
   catalogdb:
     container_name: catalogdb
     image: mongo
@@ -78,22 +69,37 @@ services:
     environment:
       ASPNETCORE_ENVIRONMENT: Development
       ASPNETCORE_HTTPS_PORT: '8006'
-      ASPNETCORE_HTTP_PORT: '8005'
       ASPNETCORE_Kestrel__Certificates__Default__Password: 123456-a
       ASPNETCORE_Kestrel__Certificates__Default__Path: /https/aspnetapp.pfx
-      ASPNETCORE_URLS: https://+;http://+
+      ASPNETCORE_URLS: https://+:443
       DatabaseSettings:ConnectionString: Server=discountdb;Port=5432;Database=DiscountDb;User
         Id=admin;Password=admin1234;
     image: discountapi
     ports:
-    - published: 8005
-      target: 80
     - published: 8006
       target: 443
     volumes:
     - C:\Users\RICARDO\.aspnet\https:/https:ro
-    - C:\Users\RICARDO\AppData\Roaming\ASP.NET\Https:/root/.aspnet/https:ro
-    - C:\Users\RICARDO\AppData\Roaming\Microsoft\UserSecrets:/root/.microsoft/usersecrets:ro
+  discount.grpc:
+    build:
+      context: D:\SamplesAPI\aspnet-microservices
+      dockerfile: Services/Discount/Discount.Grpc/Dockerfile
+    container_name: discount.grpc
+    depends_on:
+      discountdb:
+        condition: service_started
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ASPNETCORE_HTTP_PORT: '8007'
+      ASPNETCORE_URLS: http://+:80
+      DatabaseSettings:ConnectionString: Server=discountdb;Port=5432;Database=DiscountDb;User
+        Id=admin;Password=admin1234;
+    image: discountgrpc
+    ports:
+    - published: 8007
+      target: 80
+    volumes:
+    - C:\Users\RICARDO\.aspnet\https:/https:ro
   discountdb:
     container_name: discountdb
     environment:

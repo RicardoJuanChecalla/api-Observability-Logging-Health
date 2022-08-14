@@ -10,14 +10,47 @@ dotnet new webapi -au none -o Services/Basket/Basket.Api
 dotnet sln add Services/Basket/Basket.Api
 dotnet add ./Services/Basket/Basket.Api/Basket.Api.csproj package Microsoft.Extensions.Caching.StackExchangeRedis
 dotnet add ./Services/Basket/Basket.Api/Basket.Api.csproj package Newtonsoft.Json
-
 dotnet new webapi -au none -o Services/Discount/Discount.Api
 dotnet sln add Services/Discount/Discount.Api
 dotnet add ./Services/Discount/Discount.Api/Discount.Api.csproj package Npgsql
 dotnet add ./Services/Discount/Discount.Api/Discount.Api.csproj package Dapper
+dotnet new grpc -au none -o Services/Discount/Discount.Grpc
+dotnet sln add Services/Discount/Discount.Grpc
+dotnet add ./Services/Discount/Discount.Grpc/Discount.Grpc.csproj package AutoMapper.Extensions.Microsoft.DependencyInjection
+dotnet new webapi -au none -o Services/Ordering/Ordering.Api
+dotnet sln add Services/Ordering/Ordering.Api
+dotnet new classlib -o Services/Ordering/Ordering.Domain
+dotnet sln add Services/Ordering/Ordering.Domain
+dotnet new classlib -o Services/Ordering/Ordering.Application
+dotnet sln add Services/Ordering/Ordering.Application
+dotnet new classlib -o Services/Ordering/Ordering.Infrastructure
+dotnet sln add Services/Ordering/Ordering.Infrastructure
+dotnet add Services/Ordering/Ordering.Application/Ordering.Application.csproj reference Services/Ordering/Ordering.Domain/Ordering.Domain.csproj
+dotnet add Services/Ordering/Ordering.Infrastructure/Ordering.Infrastructure.csproj reference Services/Ordering/Ordering.Application/Ordering.Application.csproj
+dotnet add Services/Ordering/Ordering.Api/Ordering.Api.csproj reference Services/Ordering/Ordering.Application/Ordering.Application.csproj
+dotnet add Services/Ordering/Ordering.Api/Ordering.Api.csproj reference Services/Ordering/Ordering.Infrastructure/Ordering.Infrastructure.csproj
+dotnet add ./Services/Ordering/Ordering.Application/Ordering.Application.csproj package AutoMapper
+dotnet add ./Services/Ordering/Ordering.Application/Ordering.Application.csproj package AutoMapper.Extensions.Microsoft.DependencyInjection
+dotnet add ./Services/Ordering/Ordering.Application/Ordering.Application.csproj package MediatR.Extensions.Microsoft.DependencyInjection
+dotnet add ./Services/Ordering/Ordering.Application/Ordering.Application.csproj package Microsoft.Extensions.Logging.Abstractions
+dotnet add ./Services/Ordering/Ordering.Application/Ordering.Application.csproj package FluentValidation
+dotnet add ./Services/Ordering/Ordering.Application/Ordering.Application.csproj package FluentValidation.DependencyInjectionExtensions
+dotnet add ./Services/Ordering/Ordering.Api/Ordering.Api.csproj package MediatR.Extensions.Microsoft.DependencyInjection
+dotnet add ./Services/Ordering/Ordering.Api/Ordering.Api.csproj package Microsoft.EntityFrameworkCore.Tools
+dotnet add ./Services/Ordering/Ordering.Infrastructure/Ordering.Infrastructure.csproj package Microsoft.EntityFrameworkCore.SqlServer
+dotnet add ./Services/Ordering/Ordering.Infrastructure/Ordering.Infrastructure.csproj package SendGrid
+dotnet add ./Services/Ordering/Ordering.Infrastructure/Ordering.Infrastructure.csproj package Microsoft.EntityFrameworkCore.Design
+
+dotnet tool install --global dotnet-ef
+dotnet ef migrations add InitialCreate
+dotnet ef migrations add ./Services/Ordering/Ordering.Infrastructure/Ordering.Infrastructure.csproj InitialCreate
+
+dotnet ef migrations add Migration_Initial --configuration ./Services/Ordering/Ordering.Infrastructure/Ordering.Infrastructure.csproj
 
 --Update-Package -projectName Discount.Api
 --dotnet nuget delete Microsoft.AspNetCore.Mvc 1.0 --non-interactive
+https://github.com/mehmetozkaya/AspnetMicroservices/blob/main/src/Services/Ordering/Ordering.Application/Behaviours/UnhandledExceptionBehaviour.cs
+PM>Add-Migration InitialCreate
 -----------------------------------------------------------------
 docker pull mongo
 docker run -d -p 27017:27017 --name shopping-mongo mongo:latest
@@ -66,6 +99,14 @@ dotnet run --project ./services/Basket/Basket.api/Basket.api.csproj
 dotnet restore ./services/Discount/Discount.api/Discount.api.csproj
 dotnet build ./services/Discount/Discount.api/Discount.api.csproj
 dotnet run --project ./services/Discount/Discount.api/Discount.api.csproj
+-----------------------------------------------------------------
+dotnet restore ./services/Discount/Discount.Grpc/Discount.Grpc.csproj
+dotnet build ./services/Discount/Discount.Grpc/Discount.Grpc.csproj
+dotnet run --project ./services/Discount/Discount.Grpc/Discount.Grpc.csproj
+-----------------------------------------------------------------
+dotnet restore ./services/Ordering/Ordering.api/Ordering.api.csproj
+dotnet build ./services/Ordering/Ordering.api/Ordering.api.csproj
+dotnet run --project ./services/Ordering/Ordering.api/Ordering.api.csproj
 -----------------------------------------------------------------
 
 https://docs.microsoft.com/en-us/aspnet/core/security/docker-compose-https?view=aspnetcore-6.0

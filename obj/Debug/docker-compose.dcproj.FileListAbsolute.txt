@@ -35,3 +35,16 @@ D:\SamplesAPI\aspnet-microservices\bin\Debug\Basket.Api.pdb
 D:\SamplesAPI\aspnet-microservices\bin\Debug\Discount.Api.pdb
 D:\SamplesAPI\aspnet-microservices\obj\Debug\docker-compose.dcproj.AssemblyReference.cache
 D:\SamplesAPI\aspnet-microservices\obj\Debug\docker-compose.dcproj.CopyComplete
+D:\SamplesAPI\aspnet-microservices\bin\Debug\Discount.Grpc.deps.json
+D:\SamplesAPI\aspnet-microservices\bin\Debug\Discount.Grpc.runtimeconfig.json
+D:\SamplesAPI\aspnet-microservices\bin\Debug\Discount.Grpc.exe
+D:\SamplesAPI\aspnet-microservices\bin\Debug\Discount.Grpc.dll
+D:\SamplesAPI\aspnet-microservices\bin\Debug\Grpc.Net.ClientFactory.dll
+D:\SamplesAPI\aspnet-microservices\bin\Debug\Google.Protobuf.dll
+D:\SamplesAPI\aspnet-microservices\bin\Debug\Grpc.Core.Api.dll
+D:\SamplesAPI\aspnet-microservices\bin\Debug\AutoMapper.dll
+D:\SamplesAPI\aspnet-microservices\bin\Debug\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+D:\SamplesAPI\aspnet-microservices\bin\Debug\Grpc.AspNetCore.Server.dll
+D:\SamplesAPI\aspnet-microservices\bin\Debug\Grpc.Net.Client.dll
+D:\SamplesAPI\aspnet-microservices\bin\Debug\Grpc.Net.Common.dll
+D:\SamplesAPI\aspnet-microservices\bin\Debug\Discount.Grpc.pdb
