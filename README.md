@@ -40,13 +40,26 @@ dotnet add ./Services/Ordering/Ordering.Api/Ordering.Api.csproj package Microsof
 dotnet add ./Services/Ordering/Ordering.Infrastructure/Ordering.Infrastructure.csproj package Microsoft.EntityFrameworkCore.SqlServer
 dotnet add ./Services/Ordering/Ordering.Infrastructure/Ordering.Infrastructure.csproj package SendGrid
 dotnet add ./Services/Ordering/Ordering.Infrastructure/Ordering.Infrastructure.csproj package Microsoft.EntityFrameworkCore.Design
+dotnet new classlib -o BuildingBlocks/EventBus.Messages
+dotnet sln add BuildingBlocks/EventBus.Messages
+dotnet add ./Services/Basket/Basket.Api/Basket.Api.csproj reference ./BuildingBlocks/EventBus.Messages/EventBus.Messages.csproj
+dotnet add ./Services/Basket/Basket.Api/Basket.Api.csproj package MassTransit --version 7.3.1
+dotnet add ./Services/Basket/Basket.Api/Basket.Api.csproj package MassTransit.RabbitMQ --version 7.3.1
+dotnet add ./Services/Basket/Basket.Api/Basket.Api.csproj package MassTransit.AspNetCore --version 7.3.1
+dotnet add ./Services/Basket/Basket.Api/Basket.Api.csproj package AutoMapper.Extensions.Microsoft.DependencyInjection
 
+dotnet add ./Services/Ordering/Ordering.Api/Ordering.Api.csproj reference ./BuildingBlocks/EventBus.Messages/EventBus.Messages.csproj
+dotnet add ./Services/Ordering/Ordering.Api/Ordering.Api.csproj package MassTransit --version 7.3.1
+dotnet add ./Services/Ordering/Ordering.Api/Ordering.Api.csproj package MassTransit.RabbitMQ --version 7.3.1
+dotnet add ./Services/Ordering/Ordering.Api/Ordering.Api.csproj package MassTransit.AspNetCore --version 7.3.1
+dotnet add ./Services/Ordering/Ordering.Api/Ordering.Api.csproj package AutoMapper.Extensions.Microsoft.DependencyInjection
+
+
+-------------------------------------------------------------------------------------------------------------------------------------
 dotnet tool install --global dotnet-ef
 dotnet ef migrations add InitialCreate
 dotnet ef migrations add ./Services/Ordering/Ordering.Infrastructure/Ordering.Infrastructure.csproj InitialCreate
-
 dotnet ef migrations add Migration_Initial --configuration ./Services/Ordering/Ordering.Infrastructure/Ordering.Infrastructure.csproj
-
 --Update-Package -projectName Discount.Api
 --dotnet nuget delete Microsoft.AspNetCore.Mvc 1.0 --non-interactive
 https://github.com/mehmetozkaya/AspnetMicroservices/blob/main/src/Services/Ordering/Ordering.Application/Behaviours/UnhandledExceptionBehaviour.cs

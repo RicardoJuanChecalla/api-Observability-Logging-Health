@@ -113,6 +113,38 @@ services:
     restart: always
     volumes:
     - postgres_data:/var/lib/postgresql/data/:rw
+  orderdb:
+    container_name: orderdb
+    environment:
+      ACCEPT_EULA: "y"
+      SA_PASSWORD: SwN12345678
+    image: mcr.microsoft.com/mssql/server:2017-latest
+    ports:
+    - published: 1466
+      target: 1433
+    restart: always
+  ordering.api:
+    build:
+      context: D:\SamplesAPI\aspnet-microservices
+      dockerfile: Services/Ordering/Ordering.Api/Dockerfile
+    container_name: ordering.api
+    depends_on:
+      orderdb:
+        condition: service_started
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ASPNETCORE_HTTPS_PORT: '8010'
+      ASPNETCORE_Kestrel__Certificates__Default__Password: 123456-a
+      ASPNETCORE_Kestrel__Certificates__Default__Path: /https/aspnetapp.pfx
+      ASPNETCORE_URLS: https://+:443
+      ConnectionStrings:OrderingConnectionString: Server=orderdb;Database=OrderDb;User
+        Id=sa;Password=SwN12345678;
+    image: orderingapi
+    ports:
+    - published: 8010
+      target: 443
+    volumes:
+    - C:\Users\RICARDO\.aspnet\https:/https:ro
   pgadmin:
     container_name: pgadmin
     environment:
@@ -137,6 +169,15 @@ services:
     volumes:
     - portainer_data:/data:rw
     - /var/run/docker.sock:/var/run/docker.sock:rw
+  rabbitmq:
+    container_name: rabbitmq
+    image: rabbitmq:3-management-alpine
+    ports:
+    - published: 5672
+      target: 5672
+    - published: 15672
+      target: 15672
+    restart: always
 version: '3.4'
 volumes:
   mongo_data: {}

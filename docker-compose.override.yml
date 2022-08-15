@@ -8,11 +8,13 @@ services:
         - "27017:27017"
     volumes:
         - mongo_data:/data/db 
+  
   basketdb:
     container_name: basketdb
     restart: always
     ports:
         - "6379:6379"
+  
   discountdb:
     container_name: discountdb
     environment:
@@ -24,6 +26,7 @@ services:
         - "5432:5432"
     volumes:
         - postgres_data:/var/lib/postgresql/data/
+  
   pgadmin:
     container_name: pgadmin
     environment:
@@ -43,6 +46,14 @@ services:
     restart: always
     ports:
       - "1466:1433"  
+  
+  rabbitmq:
+    container_name: rabbitmq
+    restart: always
+    ports:
+      - "5672:5672" 
+      - "15672:15672"
+
   portainer:
     container_name: portainer
     restart: always
@@ -52,6 +63,7 @@ services:
     volumes:
         - /var/run/docker.sock:/var/run/docker.sock
         - portainer_data:/data
+  
   catalog.api:
     container_name: catalog.api
     environment:
@@ -78,8 +90,10 @@ services:
       - ASPNETCORE_Kestrel__Certificates__Default__Path=/https/aspnetapp.pfx
       - "CacheSettings:ConnectionString=basketdb:6379" 
       - "GrpcSettings:DiscountUrl=http://discount.grpc"
+      - "EventBusSettings:HostAddress=amqp://guest:guest@rabbitmq:5672" 
     depends_on:
       - basketdb
+      - rabbitmq
     ports:
       - "8004:443"
     volumes:
@@ -124,8 +138,10 @@ services:
       - ASPNETCORE_Kestrel__Certificates__Default__Password=123456-a
       - ASPNETCORE_Kestrel__Certificates__Default__Path=/https/aspnetapp.pfx
       - "ConnectionStrings:OrderingConnectionString=Server=orderdb;Database=OrderDb;User Id=sa;Password=SwN12345678;"
+      - "EventBusSettings:HostAddress=amqp://guest:guest@rabbitmq:5672" 
     depends_on:
-      - orderdb  
+      - orderdb
+      - rabbitmq
     ports:
       - "8010:443"
     volumes:

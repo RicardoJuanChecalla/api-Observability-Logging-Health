@@ -49,3 +49,17 @@ D:\SamplesAPI\aspnet-microservices\services\Basket\Basket.api\bin\Debug\net6.0\G
 D:\SamplesAPI\aspnet-microservices\services\Basket\Basket.api\bin\Debug\net6.0\Grpc.Net.Client.dll
 D:\SamplesAPI\aspnet-microservices\services\Basket\Basket.api\bin\Debug\net6.0\Grpc.Net.ClientFactory.dll
 D:\SamplesAPI\aspnet-microservices\services\Basket\Basket.api\bin\Debug\net6.0\Grpc.Net.Common.dll
+D:\SamplesAPI\aspnet-microservices\services\Basket\Basket.api\bin\Debug\net6.0\Automatonymous.dll
+D:\SamplesAPI\aspnet-microservices\services\Basket\Basket.api\bin\Debug\net6.0\GreenPipes.dll
+D:\SamplesAPI\aspnet-microservices\services\Basket\Basket.api\bin\Debug\net6.0\MassTransit.dll
+D:\SamplesAPI\aspnet-microservices\services\Basket\Basket.api\bin\Debug\net6.0\MassTransit.AspNetCoreIntegration.dll
+D:\SamplesAPI\aspnet-microservices\services\Basket\Basket.api\bin\Debug\net6.0\MassTransit.ExtensionsDependencyInjectionIntegration.dll
+D:\SamplesAPI\aspnet-microservices\services\Basket\Basket.api\bin\Debug\net6.0\MassTransit.RabbitMqTransport.dll
+D:\SamplesAPI\aspnet-microservices\services\Basket\Basket.api\bin\Debug\net6.0\Microsoft.Bcl.AsyncInterfaces.dll
+D:\SamplesAPI\aspnet-microservices\services\Basket\Basket.api\bin\Debug\net6.0\NewId.dll
+D:\SamplesAPI\aspnet-microservices\services\Basket\Basket.api\bin\Debug\net6.0\Newtonsoft.Json.Bson.dll
+D:\SamplesAPI\aspnet-microservices\services\Basket\Basket.api\bin\Debug\net6.0\RabbitMQ.Client.dll
+D:\SamplesAPI\aspnet-microservices\services\Basket\Basket.api\bin\Debug\net6.0\EventBus.Messages.dll
+D:\SamplesAPI\aspnet-microservices\services\Basket\Basket.api\bin\Debug\net6.0\EventBus.Messages.pdb
+D:\SamplesAPI\aspnet-microservices\services\Basket\Basket.api\bin\Debug\net6.0\AutoMapper.dll
+D:\SamplesAPI\aspnet-microservices\services\Basket\Basket.api\bin\Debug\net6.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
