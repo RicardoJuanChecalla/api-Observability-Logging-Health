@@ -146,3 +146,21 @@ services:
       - "8010:443"
     volumes:
       - ~/.aspnet/https:/https:ro
+
+  ocelotapigw:
+    container_name: ocelotapigw
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=https://+:443
+      - ASPNETCORE_HTTPS_PORT=8012
+      - ASPNETCORE_Kestrel__Certificates__Default__Password=123456-a
+      - ASPNETCORE_Kestrel__Certificates__Default__Path=/https/aspnetapp.pfx
+    depends_on:
+      - catalog.api
+      - basket.api
+      - discount.api
+      - ordering.api
+    ports:
+      - "8012:443"
+    volumes:
+      - ~/.aspnet/https:/https:ro

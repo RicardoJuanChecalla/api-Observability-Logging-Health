@@ -1,0 +1,123 @@
+{
+  "Routes": [
+    {
+      "DownstreamPathTemplate": "/api/v1/Catalog",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "catalog.api",
+          "Port": "443"
+        }
+      ],
+      "UpstreamPathTemplate": "/Catalog",
+      "UpstreamHttpMethod": [ "GET", "POST", "PUT" ],
+      "FileCacheOptions": { "TtlSeconds": 30 }
+    },
+    {
+      "DownstreamPathTemplate": "/api/v1/Catalog/{id}",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "catalog.api",
+          "Port": "443"
+        }
+      ],
+      "UpstreamPathTemplate": "/Catalog/{id}",
+      "UpstreamHttpMethod": [ "GET", "DELETE" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/v1/Catalog/GetProductByCategory/{category}",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "catalog.api",
+          "Port": "443"
+        }
+      ],
+      "UpstreamPathTemplate": "/Catalog/GetProductByCategory/{category}",
+      "UpstreamHttpMethod": [ "GET" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/v1/Basket/{userName}",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "basket.api",
+          "Port": "443"
+        }
+      ],
+      "UpstreamPathTemplate": "/Basket/{userName}",
+      "UpstreamHttpMethod": [ "GET", "DELETE" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/v1/Basket",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "basket.api",
+          "Port": "443"
+        }
+      ],
+      "UpstreamPathTemplate": "/Basket",
+      "UpstreamHttpMethod": [ "POST" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/v1/Basket/Checkout",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "basket.api",
+          "Port": "443"
+        }
+      ],
+      "UpstreamPathTemplate": "/Basket/Checkout",
+      "UpstreamHttpMethod": [ "POST" ],
+      "RateLimitOptions": {
+        "ClientWhitelist": [],
+        "EnableRateLimiting": true,
+        "Period": "3s",
+        "PeriodTimespan": 1,
+        "Limit": 1
+      }
+    },
+    {
+      "DownstreamPathTemplate": "/api/v1/Discount/{productName}",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "discount.api",
+          "Port": "443"
+        }
+      ],
+      "UpstreamPathTemplate": "/Discount/{productName}",
+      "UpstreamHttpMethod": [ "GET", "DELETE" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/v1/Discount",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "discount.api",
+          "Port": "443"
+        }
+      ],
+      "UpstreamPathTemplate": "/Discount",
+      "UpstreamHttpMethod": [ "PUT", "POST" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/v1/Order/{userName}",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "ordering.api",
+          "Port": "443"
+        }
+      ],
+      "UpstreamPathTemplate": "/Order/{userName}",
+      "UpstreamHttpMethod": [ "GET" ]
+    }
+  ],
+  "GlobalConfiguration": {
+    "BaseUrl": "https://ocelotapigw:8012"
+  }
+}

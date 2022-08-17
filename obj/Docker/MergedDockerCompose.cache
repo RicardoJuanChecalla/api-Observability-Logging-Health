@@ -7,6 +7,8 @@ services:
     depends_on:
       basketdb:
         condition: service_started
+      rabbitmq:
+        condition: service_started
     environment:
       ASPNETCORE_ENVIRONMENT: Development
       ASPNETCORE_HTTPS_PORT: '8004'
@@ -14,6 +16,7 @@ services:
       ASPNETCORE_Kestrel__Certificates__Default__Path: /https/aspnetapp.pfx
       ASPNETCORE_URLS: https://+:443
       CacheSettings:ConnectionString: basketdb:6379
+      EventBusSettings:HostAddress: amqp://guest:guest@rabbitmq:5672
       GrpcSettings:DiscountUrl: http://discount.grpc
     image: basketapi
     ports:
@@ -113,6 +116,32 @@ services:
     restart: always
     volumes:
     - postgres_data:/var/lib/postgresql/data/:rw
+  ocelotapigw:
+    build:
+      context: D:\SamplesAPI\aspnet-microservices
+      dockerfile: ApiGateways/OcelotApiGw/Dockerfile
+    container_name: ocelotapigw
+    depends_on:
+      basket.api:
+        condition: service_started
+      catalog.api:
+        condition: service_started
+      discount.api:
+        condition: service_started
+      ordering.api:
+        condition: service_started
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ASPNETCORE_HTTPS_PORT: '8012'
+      ASPNETCORE_Kestrel__Certificates__Default__Password: 123456-a
+      ASPNETCORE_Kestrel__Certificates__Default__Path: /https/aspnetapp.pfx
+      ASPNETCORE_URLS: https://+:443
+    image: ocelotapigw
+    ports:
+    - published: 8012
+      target: 443
+    volumes:
+    - C:\Users\RICARDO\.aspnet\https:/https:ro
   orderdb:
     container_name: orderdb
     environment:
@@ -131,6 +160,8 @@ services:
     depends_on:
       orderdb:
         condition: service_started
+      rabbitmq:
+        condition: service_started
     environment:
       ASPNETCORE_ENVIRONMENT: Development
       ASPNETCORE_HTTPS_PORT: '8010'
@@ -139,6 +170,7 @@ services:
       ASPNETCORE_URLS: https://+:443
       ConnectionStrings:OrderingConnectionString: Server=orderdb;Database=OrderDb;User
         Id=sa;Password=SwN12345678;
+      EventBusSettings:HostAddress: amqp://guest:guest@rabbitmq:5672
     image: orderingapi
     ports:
     - published: 8010
