@@ -14,7 +14,7 @@ dotnet new webapi -au none -o Services/Discount/Discount.Api
 dotnet sln add Services/Discount/Discount.Api
 dotnet add ./Services/Discount/Discount.Api/Discount.Api.csproj package Npgsql
 dotnet add ./Services/Discount/Discount.Api/Discount.Api.csproj package Dapper
-dotnet new grpc -au none -o Services/Discount/Discount.Grpc
+dotnet new grpc -au none --no-https -o Services/Discount/Discount.Grpc
 dotnet sln add Services/Discount/Discount.Grpc
 dotnet add ./Services/Discount/Discount.Grpc/Discount.Grpc.csproj package AutoMapper.Extensions.Microsoft.DependencyInjection
 dotnet new webapi -au none -o Services/Ordering/Ordering.Api
@@ -63,6 +63,7 @@ dotnet ef migrations add Migration_Initial --configuration ./Services/Ordering/O
 --Update-Package -projectName Discount.Api
 --dotnet nuget delete Microsoft.AspNetCore.Mvc 1.0 --non-interactive
 https://github.com/mehmetozkaya/AspnetMicroservices/blob/main/src/Services/Ordering/Ordering.Application/Behaviours/UnhandledExceptionBehaviour.cs
+https://medium.com/aspnetrun/building-ocelot-api-gateway-microservices-with-asp-net-core-and-docker-container-13f96026e86c
 PM>Add-Migration InitialCreate
 -----------------------------------------------------------------
 docker pull mongo
@@ -120,6 +121,19 @@ dotnet run --project ./services/Discount/Discount.Grpc/Discount.Grpc.csproj
 dotnet restore ./services/Ordering/Ordering.api/Ordering.api.csproj
 dotnet build ./services/Ordering/Ordering.api/Ordering.api.csproj
 dotnet run --project ./services/Ordering/Ordering.api/Ordering.api.csproj
+-----------------------------------------------------------------
+dotnet restore ./BuildingBlocks/EventBus.Messages/EventBus.Messages.csproj
+dotnet build ./BuildingBlocks/EventBus.Messages/EventBus.Messages.csproj
+dotnet run --project ./BuildingBlocks/EventBus.Messages/EventBus.Messages.csproj
+-----------------------------------------------------------------
+dotnet restore ./ApiGateways/OcelotApiGw/OcelotApiGw.csproj
+dotnet build ./ApiGateways/OcelotApiGw/OcelotApiGw.csproj
+dotnet run --project ./ApiGateways/OcelotApiGw/OcelotApiGw.csproj
+-----------------------------------------------------------------
+dotnet restore ./ApiGateways/Shopping.Aggregator/Shopping.Aggregator.csproj
+dotnet build ./ApiGateways/Shopping.Aggregator/Shopping.Aggregator.csproj
+dotnet run --project ./ApiGateways/Shopping.Aggregator/Shopping.Aggregator.csproj
+
 -----------------------------------------------------------------
 
 https://docs.microsoft.com/en-us/aspnet/core/security/docker-compose-https?view=aspnetcore-6.0

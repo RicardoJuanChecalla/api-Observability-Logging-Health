@@ -1,0 +1,218 @@
+services:
+  basket.api:
+    build:
+      context: D:\SamplesAPI\aspnet-microservices
+      dockerfile: Services/Basket/Basket.Api/Dockerfile
+    container_name: basket.api
+    depends_on:
+      basketdb:
+        condition: service_started
+      rabbitmq:
+        condition: service_started
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ASPNETCORE_HTTPS_PORT: '8004'
+      ASPNETCORE_Kestrel__Certificates__Default__Password: 123456-a
+      ASPNETCORE_Kestrel__Certificates__Default__Path: /https/aspnetapp.pfx
+      ASPNETCORE_URLS: https://+:443
+      CacheSettings:ConnectionString: basketdb:6379
+      EventBusSettings:HostAddress: amqp://guest:guest@rabbitmq:5672
+      GrpcSettings:DiscountUrl: http://discount.grpc
+    image: basketapi
+    ports:
+    - published: 8004
+      target: 443
+    volumes:
+    - C:\Users\RICARDO\.aspnet\https:/https:ro
+  basketdb:
+    container_name: basketdb
+    image: redis:alpine
+    ports:
+    - published: 6379
+      target: 6379
+    restart: always
+  catalog.api:
+    build:
+      context: D:\SamplesAPI\aspnet-microservices
+      dockerfile: Services/Catalog/Catalog.Api/Dockerfile
+    container_name: catalog.api
+    depends_on:
+      catalogdb:
+        condition: service_started
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ASPNETCORE_HTTPS_PORT: '8002'
+      ASPNETCORE_Kestrel__Certificates__Default__Password: 123456-a
+      ASPNETCORE_Kestrel__Certificates__Default__Path: /https/aspnetapp.pfx
+      ASPNETCORE_URLS: https://+:443
+      DatabaseSettings:ConnectionString: mongodb://catalogdb:27017
+    image: catalogapi
+    ports:
+    - published: 8002
+      target: 443
+    volumes:
+    - C:\Users\RICARDO\.aspnet\https:/https:ro
+  catalogdb:
+    container_name: catalogdb
+    image: mongo
+    ports:
+    - published: 27017
+      target: 27017
+    restart: always
+    volumes:
+    - mongo_data:/data/db:rw
+  discount.api:
+    build:
+      context: D:\SamplesAPI\aspnet-microservices
+      dockerfile: Services/Discount/Discount.Api/Dockerfile
+    container_name: discount.api
+    depends_on:
+      discountdb:
+        condition: service_started
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ASPNETCORE_HTTPS_PORT: '8006'
+      ASPNETCORE_Kestrel__Certificates__Default__Password: 123456-a
+      ASPNETCORE_Kestrel__Certificates__Default__Path: /https/aspnetapp.pfx
+      ASPNETCORE_URLS: https://+:443
+      DatabaseSettings:ConnectionString: Server=discountdb;Port=5432;Database=DiscountDb;User
+        Id=admin;Password=admin1234;
+    image: discountapi
+    ports:
+    - published: 8006
+      target: 443
+    volumes:
+    - C:\Users\RICARDO\.aspnet\https:/https:ro
+  discount.grpc:
+    build:
+      context: D:\SamplesAPI\aspnet-microservices
+      dockerfile: Services/Discount/Discount.Grpc/Dockerfile
+    container_name: discount.grpc
+    depends_on:
+      discountdb:
+        condition: service_started
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ASPNETCORE_HTTP_PORT: '8007'
+      ASPNETCORE_URLS: http://+:80
+      DatabaseSettings:ConnectionString: Server=discountdb;Port=5432;Database=DiscountDb;User
+        Id=admin;Password=admin1234;
+    image: discountgrpc
+    ports:
+    - published: 8007
+      target: 80
+    volumes:
+    - C:\Users\RICARDO\.aspnet\https:/https:ro
+  discountdb:
+    container_name: discountdb
+    environment:
+      POSTGRES_DB: DiscountDb
+      POSTGRES_PASSWORD: admin1234
+      POSTGRES_USER: admin
+    image: postgres
+    ports:
+    - published: 5432
+      target: 5432
+    restart: always
+    volumes:
+    - postgres_data:/var/lib/postgresql/data/:rw
+  ocelotapigw:
+    build:
+      context: D:\SamplesAPI\aspnet-microservices
+      dockerfile: ApiGateways/OcelotApiGw/Dockerfile
+    container_name: ocelotapigw
+    depends_on:
+      basket.api:
+        condition: service_started
+      catalog.api:
+        condition: service_started
+      discount.api:
+        condition: service_started
+      ordering.api:
+        condition: service_started
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ASPNETCORE_HTTPS_PORT: '8012'
+      ASPNETCORE_Kestrel__Certificates__Default__Password: 123456-a
+      ASPNETCORE_Kestrel__Certificates__Default__Path: /https/aspnetapp.pfx
+      ASPNETCORE_URLS: https://+:443
+    image: ocelotapigw
+    ports:
+    - published: 8012
+      target: 443
+    volumes:
+    - C:\Users\RICARDO\.aspnet\https:/https:ro
+  orderdb:
+    container_name: orderdb
+    environment:
+      ACCEPT_EULA: "y"
+      SA_PASSWORD: SwN12345678
+    image: mcr.microsoft.com/mssql/server:2017-latest
+    ports:
+    - published: 1466
+      target: 1433
+    restart: always
+  ordering.api:
+    build:
+      context: D:\SamplesAPI\aspnet-microservices
+      dockerfile: Services/Ordering/Ordering.Api/Dockerfile
+    container_name: ordering.api
+    depends_on:
+      orderdb:
+        condition: service_started
+      rabbitmq:
+        condition: service_started
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ASPNETCORE_HTTPS_PORT: '8010'
+      ASPNETCORE_Kestrel__Certificates__Default__Password: 123456-a
+      ASPNETCORE_Kestrel__Certificates__Default__Path: /https/aspnetapp.pfx
+      ASPNETCORE_URLS: https://+:443
+      ConnectionStrings:OrderingConnectionString: Server=orderdb;Database=OrderDb;User
+        Id=sa;Password=SwN12345678;
+      EventBusSettings:HostAddress: amqp://guest:guest@rabbitmq:5672
+    image: orderingapi
+    ports:
+    - published: 8010
+      target: 443
+    volumes:
+    - C:\Users\RICARDO\.aspnet\https:/https:ro
+  pgadmin:
+    container_name: pgadmin
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin@aspnet.com
+      PGADMIN_DEFAULT_PASSWORD: admin1234
+    image: dpage/pgadmin4
+    ports:
+    - published: 5050
+      target: 80
+    restart: always
+    volumes:
+    - pgadmin_data:/root/.pgadmin:rw
+  portainer:
+    container_name: portainer
+    image: portainer/portainer-ce
+    ports:
+    - published: 8000
+      target: 8000
+    - published: 9000
+      target: 9000
+    restart: always
+    volumes:
+    - portainer_data:/data:rw
+    - /var/run/docker.sock:/var/run/docker.sock:rw
+  rabbitmq:
+    container_name: rabbitmq
+    image: rabbitmq:3-management-alpine
+    ports:
+    - published: 5672
+      target: 5672
+    - published: 15672
+      target: 15672
+    restart: always
+version: '3.4'
+volumes:
+  mongo_data: {}
+  pgadmin_data: {}
+  portainer_data: {}
+  postgres_data: {}
