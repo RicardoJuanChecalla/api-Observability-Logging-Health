@@ -47,13 +47,17 @@ dotnet add ./Services/Basket/Basket.Api/Basket.Api.csproj package MassTransit --
 dotnet add ./Services/Basket/Basket.Api/Basket.Api.csproj package MassTransit.RabbitMQ --version 7.3.1
 dotnet add ./Services/Basket/Basket.Api/Basket.Api.csproj package MassTransit.AspNetCore --version 7.3.1
 dotnet add ./Services/Basket/Basket.Api/Basket.Api.csproj package AutoMapper.Extensions.Microsoft.DependencyInjection
-
 dotnet add ./Services/Ordering/Ordering.Api/Ordering.Api.csproj reference ./BuildingBlocks/EventBus.Messages/EventBus.Messages.csproj
 dotnet add ./Services/Ordering/Ordering.Api/Ordering.Api.csproj package MassTransit --version 7.3.1
 dotnet add ./Services/Ordering/Ordering.Api/Ordering.Api.csproj package MassTransit.RabbitMQ --version 7.3.1
 dotnet add ./Services/Ordering/Ordering.Api/Ordering.Api.csproj package MassTransit.AspNetCore --version 7.3.1
 dotnet add ./Services/Ordering/Ordering.Api/Ordering.Api.csproj package AutoMapper.Extensions.Microsoft.DependencyInjection
-
+dotnet new web -o ApiGateways/OcelotApiGw
+dotnet sln add ApiGateways/OcelotApiGw
+dotnet add ./ApiGateways/OcelotApiGw/OcelotApiGw.csproj package Ocelot
+dotnet add ./ApiGateways/OcelotApiGw/OcelotApiGw.csproj package Ocelot.Cache.CacheManager
+dotnet new webapi -au none -o ApiGateways/Shopping.Aggregator
+dotnet sln add ApiGateways/Shopping.Aggregator
 
 -------------------------------------------------------------------------------------------------------------------------------------
 dotnet tool install --global dotnet-ef
@@ -133,6 +137,10 @@ dotnet run --project ./ApiGateways/OcelotApiGw/OcelotApiGw.csproj
 dotnet restore ./ApiGateways/Shopping.Aggregator/Shopping.Aggregator.csproj
 dotnet build ./ApiGateways/Shopping.Aggregator/Shopping.Aggregator.csproj
 dotnet run --project ./ApiGateways/Shopping.Aggregator/Shopping.Aggregator.csproj
+-----------------------------------------------------------------
+dotnet restore ./WebApps/AspnetRunBasics/AspnetRunBasics.csproj
+dotnet build ./WebApps/AspnetRunBasics/AspnetRunBasics.csproj
+dotnet run --project ./WebApps/AspnetRunBasics/AspnetRunBasics.csproj
 
 -----------------------------------------------------------------
 

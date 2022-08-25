@@ -173,9 +173,9 @@ services:
       - ASPNETCORE_HTTPS_PORT=8014
       - ASPNETCORE_Kestrel__Certificates__Default__Password=123456-a
       - ASPNETCORE_Kestrel__Certificates__Default__Path=/https/aspnetapp.pfx
-      - "ApiSettings:CatalogUrl=https://catalog.api" 
-      - "ApiSettings:BasketUrl=https://basket.api" 
-      - "ApiSettings:OrderingUrl=https://ordering.api" 
+      - "ApiSettings:CatalogUrl=https://catalog.api"
+      - "ApiSettings:BasketUrl=https://basket.api"
+      - "ApiSettings:OrderingUrl=https://ordering.api"
     depends_on:
       - catalog.api
       - basket.api

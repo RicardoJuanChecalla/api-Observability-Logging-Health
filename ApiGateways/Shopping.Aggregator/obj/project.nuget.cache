@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "113atTIWSGvWZEIrTzGjYQJwwVqz1SUgGfIU1N3lpx4srQx9MM1HCAJNnw6iRFO/803MqziqyTIuglh+flzP8Q==",
+  "dgSpecHash": "PPWmWHmYDbbveskj6grLck7RlwribQgIb8uSnosFV8bVNDErKEaAbFUYiwFZzeV7fS7KeDlB8WSZRmCq1komxw==",
   "success": true,
   "projectFilePath": "D:\\SamplesAPI\\aspnet-microservices\\ApiGateways\\Shopping.Aggregator\\Shopping.Aggregator.csproj",
   "expectedPackageFiles": [

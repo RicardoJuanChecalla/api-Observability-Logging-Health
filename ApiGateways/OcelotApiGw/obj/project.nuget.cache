@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "XDZQBGNxNtL8yS7dE7+6oR2TQJIB12ufCyJFBo697N0OyOLUcXRWVSiy2LtLdgiJdJKJJdCerIZUgWn9KjPO+A==",
+  "dgSpecHash": "uHzGKVFmPYrtaY0bEk7ZuH6BfCEAYI0ZPY+ozQB0ExOcuy6z5D/Bfue4c9xcEPp/M44ANMMWSOTX/ZYkWH2Y5g==",
   "success": true,
   "projectFilePath": "D:\\SamplesAPI\\aspnet-microservices\\ApiGateways\\OcelotApiGw\\OcelotApiGw.csproj",
   "expectedPackageFiles": [
