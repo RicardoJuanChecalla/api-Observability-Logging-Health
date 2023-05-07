@@ -1,3 +1,16 @@
+Microservices Observability with Distributed Logging, Health Monitoring, Resilient and Fault Tolerance with using Polly
+https://medium.com/aspnetrun/microservices-resilience-and-fault-tolerance-with-applying-retry-and-circuit-breaker-patterns-c32e518db990
+https://learn.microsoft.com/en-us/dotnet/architecture/cloud-native/observability-patterns
+https://learn.microsoft.com/en-us/dotnet/architecture/cloud-native/application-resiliency-patterns
+https://learn.microsoft.com/en-us/dotnet/architecture/microservices/implement-resilient-applications/use-httpclientfactory-to-implement-resilient-http-requests
+
+https://github.com/mehmetozkaya/AspnetMicroservices
+https://github.com/mehmetozkaya/AspnetMicroservices_CrossCutting/
+https://github.com/aspnetrun/run-aspnetcore-microservices
+https://www.gokhan-gokalp.com/en/resiliency-patterns-in-microservice-architecture/
+https://github.com/App-vNext/Polly
+https://github.com/Xabaril/AspnetCore.Diagnostics.HealthChecks/
+
 https://docs.microsoft.com/en-us/dotnet/core/tools/dotnet-sln
 
 mkdir aspnet-microservices
@@ -58,6 +71,44 @@ dotnet add ./ApiGateways/OcelotApiGw/OcelotApiGw.csproj package Ocelot
 dotnet add ./ApiGateways/OcelotApiGw/OcelotApiGw.csproj package Ocelot.Cache.CacheManager
 dotnet new webapi -au none -o ApiGateways/Shopping.Aggregator
 dotnet sln add ApiGateways/Shopping.Aggregator
+------------------------------------------------------------------------------------------------------------------------------------
+dotnet new classlib -o BuildingBlocks/Common.Logging -f net6.0
+dotnet sln add BuildingBlocks/Common.Logging
+dotnet add ./BuildingBlocks/Common.Logging/Common.Logging.csproj package Serilog.AspNetCore --version 6.1.0
+dotnet add ./BuildingBlocks/Common.Logging/Common.Logging.csproj package Serilog.Enrichers.Environment --version 2.2.0
+dotnet add ./BuildingBlocks/Common.Logging/Common.Logging.csproj package Serilog.Sinks.Elasticsearch --version 9.0.0
+dotnet new mvc -au none -o WebApps/WebStatus -f net6.0
+dotnet sln add WebApps/WebStatus
+dotnet add ./WebApps/WebStatus/WebStatus.csproj package AspNetCore.HealthChecks.UI --version 6.0.5
+dotnet add ./WebApps/WebStatus/WebStatus.csproj package AspNetCore.HealthChecks.UI.InMemory.Storage --version 6.0.5
+
+dotnet add ./WebApps/AspnetRunBasics/AspnetRunBasics.csproj reference ./BuildingBlocks/Common.Logging/Common.Logging.csproj
+dotnet add ./ApiGateways/Shopping.Aggregator/Shopping.Aggregator.csproj reference ./BuildingBlocks/Common.Logging/Common.Logging.csproj
+dotnet add ./services/catalog/catalog.api/catalog.api.csproj reference ./BuildingBlocks/Common.Logging/Common.Logging.csproj
+dotnet add ./services/Basket/Basket.api/Basket.api.csproj reference ./BuildingBlocks/Common.Logging/Common.Logging.csproj
+dotnet add ./services/Discount/Discount.api/Discount.api.csproj reference ./BuildingBlocks/Common.Logging/Common.Logging.csproj
+dotnet add ./services/Discount/Discount.Grpc/Discount.Grpc.csproj reference ./BuildingBlocks/Common.Logging/Common.Logging.csproj
+dotnet add ./services/Ordering/Ordering.api/Ordering.api.csproj reference ./BuildingBlocks/Common.Logging/Common.Logging.csproj
+dotnet add ./ApiGateways/OcelotApiGw/OcelotApiGw.csproj reference ./BuildingBlocks/Common.Logging/Common.Logging.csproj
+
+dotnet add ./ApiGateways/Shopping.Aggregator/Shopping.Aggregator.csproj package Microsoft.Extensions.Http.Polly --version 6.0.16
+dotnet add ./WebApps/AspnetRunBasics/AspnetRunBasics.csproj package Microsoft.Extensions.Http.Polly --version 6.0.16
+dotnet add ./services/Ordering/Ordering.api/Ordering.api.csproj package Polly --version 7.2.3
+dotnet add ./services/Discount/Discount.api/Discount.api.csproj package Polly --version 7.2.3
+dotnet add ./services/Discount/Discount.Grpc/Discount.Grpc.csproj package Polly --version 7.2.3
+
+dotnet add ./services/catalog/catalog.api/catalog.api.csproj package AspNetCore.HealthChecks.MongoDb --version 6.0.2
+dotnet add ./services/catalog/catalog.api/catalog.api.csproj package AspNetCore.HealthChecks.UI.Client --version 6.0.5
+dotnet add ./services/Basket/Basket.api/Basket.api.csproj package AspNetCore.HealthChecks.Redis --version 6.0.4
+dotnet add ./services/Basket/Basket.api/Basket.api.csproj package AspNetCore.HealthChecks.UI.Client --version 6.0.5
+dotnet add ./services/Discount/Discount.api/Discount.api.csproj package AspNetCore.HealthChecks.NpgSql --version 6.0.2
+dotnet add ./services/Discount/Discount.api/Discount.api.csproj package AspNetCore.HealthChecks.UI.Client --version 6.0.5
+dotnet add ./services/Ordering/Ordering.api/Ordering.api.csproj package Microsoft.Extensions.Diagnostics.HealthChecks.EntityFrameworkCore --version 6.0.16
+dotnet add ./services/Ordering/Ordering.api/Ordering.api.csproj package AspNetCore.HealthChecks.UI.Client --version 6.0.5
+dotnet add ./ApiGateways/Shopping.Aggregator/Shopping.Aggregator.csproj package AspNetCore.HealthChecks.UI.Client --version 6.0.5
+dotnet add ./ApiGateways/Shopping.Aggregator/Shopping.Aggregator.csproj package AspNetCore.HealthChecks.Uris --version 6.0.3
+dotnet add ./WebApps/AspnetRunBasics/AspnetRunBasics.csproj package AspNetCore.HealthChecks.UI.Client --version 6.0.5
+dotnet add ./WebApps/AspnetRunBasics/AspnetRunBasics.csproj package AspNetCore.HealthChecks.Uris --version 6.0.3
 
 -------------------------------------------------------------------------------------------------------------------------------------
 dotnet tool install --global dotnet-ef
@@ -100,6 +151,7 @@ docker exec -it aspnet-redis /bin/bash
 -----------------------------------------------------------------
 docker-compose -f .\docker-compose.yml -f .\docker-compose.override.yml up -d
 docker-compose -f .\docker-compose.yml -f .\docker-compose.override.yml down
+docker-compose -f .\docker-compose.yml -f .\docker-compose.override.yml up --build
  docker ps -aq
  docker stop $(docker ps -aq)
  docker rm $(docker ps -aq)
@@ -141,7 +193,14 @@ dotnet run --project ./ApiGateways/Shopping.Aggregator/Shopping.Aggregator.cspro
 dotnet restore ./WebApps/AspnetRunBasics/AspnetRunBasics.csproj
 dotnet build ./WebApps/AspnetRunBasics/AspnetRunBasics.csproj
 dotnet run --project ./WebApps/AspnetRunBasics/AspnetRunBasics.csproj
-
+----------------------------------------------------------------
+dotnet restore ./BuildingBlocks/Common.Logging/Common.Logging.csproj
+dotnet build ./BuildingBlocks/Common.Logging/Common.Logging.csproj
+dotnet run --project ./BuildingBlocks/Common.Logging/Common.Logging.csproj
+----------------------------------------------------------------
+dotnet restore ./WebApps/WebStatus/WebStatus.csproj
+dotnet build ./WebApps/WebStatus/WebStatus.csproj
+dotnet run --project ./WebApps/WebStatus/WebStatus.csproj
 -----------------------------------------------------------------
 
 https://docs.microsoft.com/en-us/aspnet/core/security/docker-compose-https?view=aspnetcore-6.0
@@ -151,3 +210,13 @@ https://www.mongodb.com/developer/languages/csharp/create-restful-api-dotnet-cor
 https://qappdesign.com/code/using-mongodb-with-net-core-webapi/
 https://docs.portainer.io/start/intro
 https://hub.docker.com/r/dpage/pgadmin4
+
+https://medium.com/aspnetrun/microservices-observability-with-distributed-logging-using-elasticsearch-and-kibana-79df919997d2
+https://learn.microsoft.com/en-us/aspnet/core/fundamentals/logging/?view=aspnetcore-6.0
+https://github.com/mehmetozkaya/AspnetMicroservices_CrossCutting/blob/main/src/docker-compose.override.yml
+https://github.com/thecarlo/elastic-kibana-netcore-serilog/blob/master/src/docker/docker-compose.yml
+https://github.com/mehmetozkaya/AspnetMicroservices_CrossCutting/blob/main/src/WebApps/AspnetRunBasics/Services/CatalogService.cs
+----------------------------------------------------------------------
+https://mahdikarimipour.com/blog/docker-compose-for-multi-container-apps
+https://mahdikarimipour.com/blog/containerise-aspnet-api
+https://mahdikarimipour.com/blog/containerise-react-app-with-aspnet-and-azure-devops

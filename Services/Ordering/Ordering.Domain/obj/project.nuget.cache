@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "AD7caXmPdLm3GU4dJykfcBw2RiGuQPPKkNBdE+7VdcDhtMRVtMUskzY6FXOC1o5GCmges91ErH5KYuPEKTmYKw==",
+  "dgSpecHash": "Pwmo6nIORG25SGlCOElwOr9y+/Ia0/rRiAd2v33I5umcFlYrwgZtvl6s390vMN9uoAZgbnTV7UQzVAio6Cpz7w==",
   "success": true,
-  "projectFilePath": "D:\\SamplesAPI\\aspnet-microservices\\Services\\Ordering\\Ordering.Domain\\Ordering.Domain.csproj",
+  "projectFilePath": "D:\\SamplesAPI\\aspnet-microservices2\\Services\\Ordering\\Ordering.Domain\\Ordering.Domain.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

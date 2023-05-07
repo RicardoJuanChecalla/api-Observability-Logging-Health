@@ -11,7 +11,6 @@ namespace AspnetRunBasics
     {
         private readonly IBasketService _basketService;
         private readonly IOrderService _orderService;
-
         public CheckOutModel(IBasketService basketService, IOrderService orderService)
         {
             _basketService = basketService ?? throw new ArgumentNullException(nameof(basketService));
@@ -27,7 +26,6 @@ namespace AspnetRunBasics
         {
             var userName = "swn";
             Cart = await _basketService.GetBasket(userName);
-
             return Page();
         }
 
@@ -35,12 +33,12 @@ namespace AspnetRunBasics
         {
             var userName = "swn";
             Cart = await _basketService.GetBasket(userName);
-
+            
             if (!ModelState.IsValid)
             {
                 return Page();
             }
-
+            
             Order.UserName = userName;
             Order.TotalPrice = Cart.TotalPrice;
 

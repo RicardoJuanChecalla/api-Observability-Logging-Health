@@ -10,3 +10,15 @@ D:\SamplesAPI\aspnet-microservices\BuildingBlocks\EventBus.Messages\obj\Debug\ne
 D:\SamplesAPI\aspnet-microservices\BuildingBlocks\EventBus.Messages\obj\Debug\net6.0\refint\EventBus.Messages.dll
 D:\SamplesAPI\aspnet-microservices\BuildingBlocks\EventBus.Messages\obj\Debug\net6.0\EventBus.Messages.pdb
 D:\SamplesAPI\aspnet-microservices\BuildingBlocks\EventBus.Messages\obj\Debug\net6.0\ref\EventBus.Messages.dll
+D:\SamplesAPI\aspnet-microservices2\BuildingBlocks\EventBus.Messages\bin\Debug\net6.0\EventBus.Messages.deps.json
+D:\SamplesAPI\aspnet-microservices2\BuildingBlocks\EventBus.Messages\bin\Debug\net6.0\EventBus.Messages.dll
+D:\SamplesAPI\aspnet-microservices2\BuildingBlocks\EventBus.Messages\bin\Debug\net6.0\EventBus.Messages.pdb
+D:\SamplesAPI\aspnet-microservices2\BuildingBlocks\EventBus.Messages\obj\Debug\net6.0\EventBus.Messages.csproj.AssemblyReference.cache
+D:\SamplesAPI\aspnet-microservices2\BuildingBlocks\EventBus.Messages\obj\Debug\net6.0\EventBus.Messages.GeneratedMSBuildEditorConfig.editorconfig
+D:\SamplesAPI\aspnet-microservices2\BuildingBlocks\EventBus.Messages\obj\Debug\net6.0\EventBus.Messages.AssemblyInfoInputs.cache
+D:\SamplesAPI\aspnet-microservices2\BuildingBlocks\EventBus.Messages\obj\Debug\net6.0\EventBus.Messages.AssemblyInfo.cs
+D:\SamplesAPI\aspnet-microservices2\BuildingBlocks\EventBus.Messages\obj\Debug\net6.0\EventBus.Messages.csproj.CoreCompileInputs.cache
+D:\SamplesAPI\aspnet-microservices2\BuildingBlocks\EventBus.Messages\obj\Debug\net6.0\EventBus.Messages.dll
+D:\SamplesAPI\aspnet-microservices2\BuildingBlocks\EventBus.Messages\obj\Debug\net6.0\refint\EventBus.Messages.dll
+D:\SamplesAPI\aspnet-microservices2\BuildingBlocks\EventBus.Messages\obj\Debug\net6.0\EventBus.Messages.pdb
+D:\SamplesAPI\aspnet-microservices2\BuildingBlocks\EventBus.Messages\obj\Debug\net6.0\ref\EventBus.Messages.dll

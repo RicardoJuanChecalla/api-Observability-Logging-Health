@@ -2339,11 +2339,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\SamplesAPI\\aspnet-microservices\\Services\\Ordering\\Ordering.Infrastructure\\Ordering.Infrastructure.csproj",
+      "projectUniqueName": "D:\\SamplesAPI\\aspnet-microservices2\\Services\\Ordering\\Ordering.Infrastructure\\Ordering.Infrastructure.csproj",
       "projectName": "Ordering.Infrastructure",
-      "projectPath": "D:\\SamplesAPI\\aspnet-microservices\\Services\\Ordering\\Ordering.Infrastructure\\Ordering.Infrastructure.csproj",
+      "projectPath": "D:\\SamplesAPI\\aspnet-microservices2\\Services\\Ordering\\Ordering.Infrastructure\\Ordering.Infrastructure.csproj",
       "packagesPath": "C:\\Users\\RICARDO\\.nuget\\packages\\",
-      "outputPath": "D:\\SamplesAPI\\aspnet-microservices\\Services\\Ordering\\Ordering.Infrastructure\\obj\\",
+      "outputPath": "D:\\SamplesAPI\\aspnet-microservices2\\Services\\Ordering\\Ordering.Infrastructure\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -2365,8 +2365,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "D:\\SamplesAPI\\aspnet-microservices\\Services\\Ordering\\Ordering.Application\\Ordering.Application.csproj": {
-              "projectPath": "D:\\SamplesAPI\\aspnet-microservices\\Services\\Ordering\\Ordering.Application\\Ordering.Application.csproj"
+            "D:\\SamplesAPI\\aspnet-microservices2\\Services\\Ordering\\Ordering.Application\\Ordering.Application.csproj": {
+              "projectPath": "D:\\SamplesAPI\\aspnet-microservices2\\Services\\Ordering\\Ordering.Application\\Ordering.Application.csproj"
             }
           }
         }
@@ -2412,7 +2412,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
       }
     }
   }

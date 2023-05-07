@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "PoxCXqjXogYm19wszF7XfBzXHsGMEA86rCLytPkZjWWoc1w6xk0n1/9/BcRfRHwlYKiwh0ethjXv1bM/SuTZiA==",
+  "dgSpecHash": "DIwKPFB5o5BFB7TXBOrbYUmgbBdvlFyGfj5EMXMNiLeNet1tKecWcpUHZppOo+U1MREGYPen2/UfJzbrb+FpFw==",
   "success": true,
-  "projectFilePath": "D:\\SamplesAPI\\aspnet-microservices\\Services\\Ordering\\Ordering.Infrastructure\\Ordering.Infrastructure.csproj",
+  "projectFilePath": "D:\\SamplesAPI\\aspnet-microservices2\\Services\\Ordering\\Ordering.Infrastructure\\Ordering.Infrastructure.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\RICARDO\\.nuget\\packages\\automapper\\11.0.1\\automapper.11.0.1.nupkg.sha512",
     "C:\\Users\\RICARDO\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\11.0.0\\automapper.extensions.microsoft.dependencyinjection.11.0.0.nupkg.sha512",

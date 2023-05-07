@@ -1,0 +1,12 @@
+D:\SamplesAPI\aspnet-microservices2\BuildingBlocks\Common.Logging\bin\Debug\net6.0\Common.Logging.deps.json
+D:\SamplesAPI\aspnet-microservices2\BuildingBlocks\Common.Logging\bin\Debug\net6.0\Common.Logging.dll
+D:\SamplesAPI\aspnet-microservices2\BuildingBlocks\Common.Logging\bin\Debug\net6.0\Common.Logging.pdb
+D:\SamplesAPI\aspnet-microservices2\BuildingBlocks\Common.Logging\obj\Debug\net6.0\Common.Logging.csproj.AssemblyReference.cache
+D:\SamplesAPI\aspnet-microservices2\BuildingBlocks\Common.Logging\obj\Debug\net6.0\Common.Logging.GeneratedMSBuildEditorConfig.editorconfig
+D:\SamplesAPI\aspnet-microservices2\BuildingBlocks\Common.Logging\obj\Debug\net6.0\Common.Logging.AssemblyInfoInputs.cache
+D:\SamplesAPI\aspnet-microservices2\BuildingBlocks\Common.Logging\obj\Debug\net6.0\Common.Logging.AssemblyInfo.cs
+D:\SamplesAPI\aspnet-microservices2\BuildingBlocks\Common.Logging\obj\Debug\net6.0\Common.Logging.csproj.CoreCompileInputs.cache
+D:\SamplesAPI\aspnet-microservices2\BuildingBlocks\Common.Logging\obj\Debug\net6.0\Common.Logging.dll
+D:\SamplesAPI\aspnet-microservices2\BuildingBlocks\Common.Logging\obj\Debug\net6.0\refint\Common.Logging.dll
+D:\SamplesAPI\aspnet-microservices2\BuildingBlocks\Common.Logging\obj\Debug\net6.0\Common.Logging.pdb
+D:\SamplesAPI\aspnet-microservices2\BuildingBlocks\Common.Logging\obj\Debug\net6.0\ref\Common.Logging.dll

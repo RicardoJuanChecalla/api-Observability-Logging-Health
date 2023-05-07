@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "L1d0jZESR0nOh9Ekl45hLiWaW4Q84aqd0wua7fSilQs=",
+  "Hash": "b+1i397Ez9CNbxvqcxXbMi4ixrt6CIdqT3TyngdYYg0=",
   "Source": "AspnetRunBasics",
   "BasePath": "_content/AspnetRunBasics",
   "Mode": "Default",
@@ -10,17 +10,17 @@
     {
       "Name": "AspnetRunBasics\\wwwroot",
       "Source": "AspnetRunBasics",
-      "ContentRoot": "D:\\SamplesAPI\\aspnet-microservices\\WebApps\\AspnetRunBasics\\wwwroot\\",
+      "ContentRoot": "D:\\SamplesAPI\\aspnet-microservices2\\WebApps\\AspnetRunBasics\\wwwroot\\",
       "BasePath": "_content/AspnetRunBasics",
       "Pattern": "**"
     }
   ],
   "Assets": [
     {
-      "Identity": "D:\\SamplesAPI\\aspnet-microservices\\WebApps\\AspnetRunBasics\\wwwroot\\css\\style.css",
+      "Identity": "D:\\SamplesAPI\\aspnet-microservices2\\WebApps\\AspnetRunBasics\\wwwroot\\css\\style.css",
       "SourceId": "AspnetRunBasics",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\SamplesAPI\\aspnet-microservices\\WebApps\\AspnetRunBasics\\wwwroot\\",
+      "ContentRoot": "D:\\SamplesAPI\\aspnet-microservices2\\WebApps\\AspnetRunBasics\\wwwroot\\",
       "BasePath": "_content/AspnetRunBasics",
       "RelativePath": "css/style.css",
       "AssetKind": "All",
@@ -34,10 +34,10 @@
       "OriginalItemSpec": "wwwroot\\css\\style.css"
     },
     {
-      "Identity": "D:\\SamplesAPI\\aspnet-microservices\\WebApps\\AspnetRunBasics\\wwwroot\\favicon.ico",
+      "Identity": "D:\\SamplesAPI\\aspnet-microservices2\\WebApps\\AspnetRunBasics\\wwwroot\\favicon.ico",
       "SourceId": "AspnetRunBasics",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\SamplesAPI\\aspnet-microservices\\WebApps\\AspnetRunBasics\\wwwroot\\",
+      "ContentRoot": "D:\\SamplesAPI\\aspnet-microservices2\\WebApps\\AspnetRunBasics\\wwwroot\\",
       "BasePath": "_content/AspnetRunBasics",
       "RelativePath": "favicon.ico",
       "AssetKind": "All",
@@ -51,10 +51,10 @@
       "OriginalItemSpec": "wwwroot\\favicon.ico"
     },
     {
-      "Identity": "D:\\SamplesAPI\\aspnet-microservices\\WebApps\\AspnetRunBasics\\wwwroot\\images\\banner\\banner1.png",
+      "Identity": "D:\\SamplesAPI\\aspnet-microservices2\\WebApps\\AspnetRunBasics\\wwwroot\\images\\banner\\banner1.png",
       "SourceId": "AspnetRunBasics",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\SamplesAPI\\aspnet-microservices\\WebApps\\AspnetRunBasics\\wwwroot\\",
+      "ContentRoot": "D:\\SamplesAPI\\aspnet-microservices2\\WebApps\\AspnetRunBasics\\wwwroot\\",
       "BasePath": "_content/AspnetRunBasics",
       "RelativePath": "images/banner/banner1.png",
       "AssetKind": "All",
@@ -68,10 +68,10 @@
       "OriginalItemSpec": "wwwroot\\images\\banner\\banner1.png"
     },
     {
-      "Identity": "D:\\SamplesAPI\\aspnet-microservices\\WebApps\\AspnetRunBasics\\wwwroot\\images\\banner\\banner2.png",
+      "Identity": "D:\\SamplesAPI\\aspnet-microservices2\\WebApps\\AspnetRunBasics\\wwwroot\\images\\banner\\banner2.png",
       "SourceId": "AspnetRunBasics",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\SamplesAPI\\aspnet-microservices\\WebApps\\AspnetRunBasics\\wwwroot\\",
+      "ContentRoot": "D:\\SamplesAPI\\aspnet-microservices2\\WebApps\\AspnetRunBasics\\wwwroot\\",
       "BasePath": "_content/AspnetRunBasics",
       "RelativePath": "images/banner/banner2.png",
       "AssetKind": "All",
@@ -85,10 +85,10 @@
       "OriginalItemSpec": "wwwroot\\images\\banner\\banner2.png"
     },
     {
-      "Identity": "D:\\SamplesAPI\\aspnet-microservices\\WebApps\\AspnetRunBasics\\wwwroot\\images\\banner\\banner3.png",
+      "Identity": "D:\\SamplesAPI\\aspnet-microservices2\\WebApps\\AspnetRunBasics\\wwwroot\\images\\banner\\banner3.png",
       "SourceId": "AspnetRunBasics",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\SamplesAPI\\aspnet-microservices\\WebApps\\AspnetRunBasics\\wwwroot\\",
+      "ContentRoot": "D:\\SamplesAPI\\aspnet-microservices2\\WebApps\\AspnetRunBasics\\wwwroot\\",
       "BasePath": "_content/AspnetRunBasics",
       "RelativePath": "images/banner/banner3.png",
       "AssetKind": "All",
@@ -102,10 +102,10 @@
       "OriginalItemSpec": "wwwroot\\images\\banner\\banner3.png"
     },
     {
-      "Identity": "D:\\SamplesAPI\\aspnet-microservices\\WebApps\\AspnetRunBasics\\wwwroot\\images\\placeholder.png",
+      "Identity": "D:\\SamplesAPI\\aspnet-microservices2\\WebApps\\AspnetRunBasics\\wwwroot\\images\\placeholder.png",
       "SourceId": "AspnetRunBasics",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\SamplesAPI\\aspnet-microservices\\WebApps\\AspnetRunBasics\\wwwroot\\",
+      "ContentRoot": "D:\\SamplesAPI\\aspnet-microservices2\\WebApps\\AspnetRunBasics\\wwwroot\\",
       "BasePath": "_content/AspnetRunBasics",
       "RelativePath": "images/placeholder.png",
       "AssetKind": "All",
@@ -119,10 +119,10 @@
       "OriginalItemSpec": "wwwroot\\images\\placeholder.png"
     },
     {
-      "Identity": "D:\\SamplesAPI\\aspnet-microservices\\WebApps\\AspnetRunBasics\\wwwroot\\images\\product\\product-1.png",
+      "Identity": "D:\\SamplesAPI\\aspnet-microservices2\\WebApps\\AspnetRunBasics\\wwwroot\\images\\product\\product-1.png",
       "SourceId": "AspnetRunBasics",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\SamplesAPI\\aspnet-microservices\\WebApps\\AspnetRunBasics\\wwwroot\\",
+      "ContentRoot": "D:\\SamplesAPI\\aspnet-microservices2\\WebApps\\AspnetRunBasics\\wwwroot\\",
       "BasePath": "_content/AspnetRunBasics",
       "RelativePath": "images/product/product-1.png",
       "AssetKind": "All",
@@ -136,10 +136,10 @@
       "OriginalItemSpec": "wwwroot\\images\\product\\product-1.png"
     },
     {
-      "Identity": "D:\\SamplesAPI\\aspnet-microservices\\WebApps\\AspnetRunBasics\\wwwroot\\images\\product\\product-2.png",
+      "Identity": "D:\\SamplesAPI\\aspnet-microservices2\\WebApps\\AspnetRunBasics\\wwwroot\\images\\product\\product-2.png",
       "SourceId": "AspnetRunBasics",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\SamplesAPI\\aspnet-microservices\\WebApps\\AspnetRunBasics\\wwwroot\\",
+      "ContentRoot": "D:\\SamplesAPI\\aspnet-microservices2\\WebApps\\AspnetRunBasics\\wwwroot\\",
       "BasePath": "_content/AspnetRunBasics",
       "RelativePath": "images/product/product-2.png",
       "AssetKind": "All",
@@ -153,10 +153,10 @@
       "OriginalItemSpec": "wwwroot\\images\\product\\product-2.png"
     },
     {
-      "Identity": "D:\\SamplesAPI\\aspnet-microservices\\WebApps\\AspnetRunBasics\\wwwroot\\images\\product\\product-3.png",
+      "Identity": "D:\\SamplesAPI\\aspnet-microservices2\\WebApps\\AspnetRunBasics\\wwwroot\\images\\product\\product-3.png",
       "SourceId": "AspnetRunBasics",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\SamplesAPI\\aspnet-microservices\\WebApps\\AspnetRunBasics\\wwwroot\\",
+      "ContentRoot": "D:\\SamplesAPI\\aspnet-microservices2\\WebApps\\AspnetRunBasics\\wwwroot\\",
       "BasePath": "_content/AspnetRunBasics",
       "RelativePath": "images/product/product-3.png",
       "AssetKind": "All",
@@ -170,10 +170,10 @@
       "OriginalItemSpec": "wwwroot\\images\\product\\product-3.png"
     },
     {
-      "Identity": "D:\\SamplesAPI\\aspnet-microservices\\WebApps\\AspnetRunBasics\\wwwroot\\images\\product\\product-4.png",
+      "Identity": "D:\\SamplesAPI\\aspnet-microservices2\\WebApps\\AspnetRunBasics\\wwwroot\\images\\product\\product-4.png",
       "SourceId": "AspnetRunBasics",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\SamplesAPI\\aspnet-microservices\\WebApps\\AspnetRunBasics\\wwwroot\\",
+      "ContentRoot": "D:\\SamplesAPI\\aspnet-microservices2\\WebApps\\AspnetRunBasics\\wwwroot\\",
       "BasePath": "_content/AspnetRunBasics",
       "RelativePath": "images/product/product-4.png",
       "AssetKind": "All",
@@ -187,10 +187,10 @@
       "OriginalItemSpec": "wwwroot\\images\\product\\product-4.png"
     },
     {
-      "Identity": "D:\\SamplesAPI\\aspnet-microservices\\WebApps\\AspnetRunBasics\\wwwroot\\images\\product\\product-5.png",
+      "Identity": "D:\\SamplesAPI\\aspnet-microservices2\\WebApps\\AspnetRunBasics\\wwwroot\\images\\product\\product-5.png",
       "SourceId": "AspnetRunBasics",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\SamplesAPI\\aspnet-microservices\\WebApps\\AspnetRunBasics\\wwwroot\\",
+      "ContentRoot": "D:\\SamplesAPI\\aspnet-microservices2\\WebApps\\AspnetRunBasics\\wwwroot\\",
       "BasePath": "_content/AspnetRunBasics",
       "RelativePath": "images/product/product-5.png",
       "AssetKind": "All",
@@ -204,10 +204,10 @@
       "OriginalItemSpec": "wwwroot\\images\\product\\product-5.png"
     },
     {
-      "Identity": "D:\\SamplesAPI\\aspnet-microservices\\WebApps\\AspnetRunBasics\\wwwroot\\images\\product\\product-6.png",
+      "Identity": "D:\\SamplesAPI\\aspnet-microservices2\\WebApps\\AspnetRunBasics\\wwwroot\\images\\product\\product-6.png",
       "SourceId": "AspnetRunBasics",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\SamplesAPI\\aspnet-microservices\\WebApps\\AspnetRunBasics\\wwwroot\\",
+      "ContentRoot": "D:\\SamplesAPI\\aspnet-microservices2\\WebApps\\AspnetRunBasics\\wwwroot\\",
       "BasePath": "_content/AspnetRunBasics",
       "RelativePath": "images/product/product-6.png",
       "AssetKind": "All",
@@ -221,10 +221,10 @@
       "OriginalItemSpec": "wwwroot\\images\\product\\product-6.png"
     },
     {
-      "Identity": "D:\\SamplesAPI\\aspnet-microservices\\WebApps\\AspnetRunBasics\\wwwroot\\images\\product\\product-7.png",
+      "Identity": "D:\\SamplesAPI\\aspnet-microservices2\\WebApps\\AspnetRunBasics\\wwwroot\\images\\product\\product-7.png",
       "SourceId": "AspnetRunBasics",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\SamplesAPI\\aspnet-microservices\\WebApps\\AspnetRunBasics\\wwwroot\\",
+      "ContentRoot": "D:\\SamplesAPI\\aspnet-microservices2\\WebApps\\AspnetRunBasics\\wwwroot\\",
       "BasePath": "_content/AspnetRunBasics",
       "RelativePath": "images/product/product-7.png",
       "AssetKind": "All",
@@ -238,10 +238,10 @@
       "OriginalItemSpec": "wwwroot\\images\\product\\product-7.png"
     },
     {
-      "Identity": "D:\\SamplesAPI\\aspnet-microservices\\WebApps\\AspnetRunBasics\\wwwroot\\images\\product\\productx1.png",
+      "Identity": "D:\\SamplesAPI\\aspnet-microservices2\\WebApps\\AspnetRunBasics\\wwwroot\\images\\product\\productx1.png",
       "SourceId": "AspnetRunBasics",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\SamplesAPI\\aspnet-microservices\\WebApps\\AspnetRunBasics\\wwwroot\\",
+      "ContentRoot": "D:\\SamplesAPI\\aspnet-microservices2\\WebApps\\AspnetRunBasics\\wwwroot\\",
       "BasePath": "_content/AspnetRunBasics",
       "RelativePath": "images/product/productx1.png",
       "AssetKind": "All",
@@ -255,10 +255,10 @@
       "OriginalItemSpec": "wwwroot\\images\\product\\productx1.png"
     },
     {
-      "Identity": "D:\\SamplesAPI\\aspnet-microservices\\WebApps\\AspnetRunBasics\\wwwroot\\images\\product\\productx2.png",
+      "Identity": "D:\\SamplesAPI\\aspnet-microservices2\\WebApps\\AspnetRunBasics\\wwwroot\\images\\product\\productx2.png",
       "SourceId": "AspnetRunBasics",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\SamplesAPI\\aspnet-microservices\\WebApps\\AspnetRunBasics\\wwwroot\\",
+      "ContentRoot": "D:\\SamplesAPI\\aspnet-microservices2\\WebApps\\AspnetRunBasics\\wwwroot\\",
       "BasePath": "_content/AspnetRunBasics",
       "RelativePath": "images/product/productx2.png",
       "AssetKind": "All",
@@ -272,10 +272,10 @@
       "OriginalItemSpec": "wwwroot\\images\\product\\productx2.png"
     },
     {
-      "Identity": "D:\\SamplesAPI\\aspnet-microservices\\WebApps\\AspnetRunBasics\\wwwroot\\images\\product\\productx3.png",
+      "Identity": "D:\\SamplesAPI\\aspnet-microservices2\\WebApps\\AspnetRunBasics\\wwwroot\\images\\product\\productx3.png",
       "SourceId": "AspnetRunBasics",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\SamplesAPI\\aspnet-microservices\\WebApps\\AspnetRunBasics\\wwwroot\\",
+      "ContentRoot": "D:\\SamplesAPI\\aspnet-microservices2\\WebApps\\AspnetRunBasics\\wwwroot\\",
       "BasePath": "_content/AspnetRunBasics",
       "RelativePath": "images/product/productx3.png",
       "AssetKind": "All",
@@ -289,10 +289,10 @@
       "OriginalItemSpec": "wwwroot\\images\\product\\productx3.png"
     },
     {
-      "Identity": "D:\\SamplesAPI\\aspnet-microservices\\WebApps\\AspnetRunBasics\\wwwroot\\images\\product\\productx4.png",
+      "Identity": "D:\\SamplesAPI\\aspnet-microservices2\\WebApps\\AspnetRunBasics\\wwwroot\\images\\product\\productx4.png",
       "SourceId": "AspnetRunBasics",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\SamplesAPI\\aspnet-microservices\\WebApps\\AspnetRunBasics\\wwwroot\\",
+      "ContentRoot": "D:\\SamplesAPI\\aspnet-microservices2\\WebApps\\AspnetRunBasics\\wwwroot\\",
       "BasePath": "_content/AspnetRunBasics",
       "RelativePath": "images/product/productx4.png",
       "AssetKind": "All",
@@ -306,10 +306,10 @@
       "OriginalItemSpec": "wwwroot\\images\\product\\productx4.png"
     },
     {
-      "Identity": "D:\\SamplesAPI\\aspnet-microservices\\WebApps\\AspnetRunBasics\\wwwroot\\images\\product\\productx5.png",
+      "Identity": "D:\\SamplesAPI\\aspnet-microservices2\\WebApps\\AspnetRunBasics\\wwwroot\\images\\product\\productx5.png",
       "SourceId": "AspnetRunBasics",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\SamplesAPI\\aspnet-microservices\\WebApps\\AspnetRunBasics\\wwwroot\\",
+      "ContentRoot": "D:\\SamplesAPI\\aspnet-microservices2\\WebApps\\AspnetRunBasics\\wwwroot\\",
       "BasePath": "_content/AspnetRunBasics",
       "RelativePath": "images/product/productx5.png",
       "AssetKind": "All",
@@ -323,10 +323,10 @@
       "OriginalItemSpec": "wwwroot\\images\\product\\productx5.png"
     },
     {
-      "Identity": "D:\\SamplesAPI\\aspnet-microservices\\WebApps\\AspnetRunBasics\\wwwroot\\images\\product\\productx6.png",
+      "Identity": "D:\\SamplesAPI\\aspnet-microservices2\\WebApps\\AspnetRunBasics\\wwwroot\\images\\product\\productx6.png",
       "SourceId": "AspnetRunBasics",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\SamplesAPI\\aspnet-microservices\\WebApps\\AspnetRunBasics\\wwwroot\\",
+      "ContentRoot": "D:\\SamplesAPI\\aspnet-microservices2\\WebApps\\AspnetRunBasics\\wwwroot\\",
       "BasePath": "_content/AspnetRunBasics",
       "RelativePath": "images/product/productx6.png",
       "AssetKind": "All",
@@ -340,10 +340,10 @@
       "OriginalItemSpec": "wwwroot\\images\\product\\productx6.png"
     },
     {
-      "Identity": "D:\\SamplesAPI\\aspnet-microservices\\WebApps\\AspnetRunBasics\\wwwroot\\images\\product\\productx7.png",
+      "Identity": "D:\\SamplesAPI\\aspnet-microservices2\\WebApps\\AspnetRunBasics\\wwwroot\\images\\product\\productx7.png",
       "SourceId": "AspnetRunBasics",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\SamplesAPI\\aspnet-microservices\\WebApps\\AspnetRunBasics\\wwwroot\\",
+      "ContentRoot": "D:\\SamplesAPI\\aspnet-microservices2\\WebApps\\AspnetRunBasics\\wwwroot\\",
       "BasePath": "_content/AspnetRunBasics",
       "RelativePath": "images/product/productx7.png",
       "AssetKind": "All",
